@@ -74,7 +74,7 @@ define openvpn::ca (
 
   file { "${etc_directory}/openvpn/${name}/easy-rsa/easyrsa" :
     ensure  => file,
-    mode    => '0750',
+    mode    => '0740',
     require => File["${etc_directory}/openvpn/${name}/easy-rsa"],
   }
 
