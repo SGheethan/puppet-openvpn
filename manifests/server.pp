@@ -133,7 +133,7 @@ define openvpn::server (
   Optional[String] $group                                           = undef,
   Boolean $ipp                                                      = false,
   Boolean $duplicate_cn                                             = false,
-  String $local                                                     = $facts['ipaddress_ens912'],
+  String $local                                                     = $facts['ipaddress_ens192'],
   Variant[Boolean, String] $logfile                                 = false,
   String $port                                                      = '1194',
   Optional[String] $portshare                                       = undef,
