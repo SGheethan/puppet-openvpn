@@ -277,6 +277,7 @@ define openvpn::server (
   file { "${etc_directory}/openvpn/${name}":
     ensure => directory,
     mode   => '0750',
+    group  => 'openvpn',
     notify => $lnotify,
   }
   if $shared_ca {
