@@ -119,6 +119,7 @@ define openvpn::ca (
         require  => Exec["generate dh param ${name}"],
       }
 
+
       exec { "generate server cert ${name}":
         command  => ". ./vars && ./pkitool --server ${common_name}",
         cwd      => "${etc_directory}/openvpn/${name}/easy-rsa",
