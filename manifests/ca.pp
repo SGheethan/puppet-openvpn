@@ -170,7 +170,6 @@ define openvpn::ca (
 
       exec { "initca ${name}":
         command  => './easyrsa --batch init-pki && ./easyrsa --batch build-ca nopass',
-        ensure   => present,
         cwd      => "${etc_directory}/openvpn/${name}/easy-rsa",
         creates  => "${etc_directory}/openvpn/${name}/easy-rsa/keys/ca.crt",
         provider => 'shell',
