@@ -26,6 +26,7 @@ class openvpn::params {
       $namespecific_rclink = false
       $default_easyrsa_ver = '3.0'
       $easyrsa_source      = '/usr/share/easy-rsa/3'
+      $easyrsa_binary      = '/usr/share/easy-rsa/3/easyrsa'
 
       case $facts['os']['release']['major'] {
         '7': {

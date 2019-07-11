@@ -129,9 +129,17 @@ define openvpn::ca (
     recurse            => true,
     links              => 'follow',
     source_permissions => 'use',
-    group              => 'openvpn',
+    group              => 0,
     source             => "file:${openvpn::params::easyrsa_source}",
     require            => File["${etc_directory}/openvpn/${name}"],
+  }
+
+  file { "${etc_directory}/openvpn/${name}/easy-rsa/easyrsa":
+    ensure  => present,
+    mode    => '0740',
+    group   => 'openvpn',
+    source  => "file:${openvpn::params::easyrsa_binary}",
+    require => File["${etc_directory}/openvpn/${name}/easy-rsa"],
   }
 
   file { "${etc_directory}/openvpn/${name}/easy-rsa/revoked":
