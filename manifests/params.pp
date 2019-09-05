@@ -30,7 +30,7 @@ class openvpn::params {
 
       case $facts['os']['release']['major'] {
         '7': {
-          $additional_packages = ['easy-rsa']
+          $additional_packages = ['easy-rsa','openvpn-auth-ldap']
           $ldap_auth_plugin_location = undef
           $systemd = true
         }
