@@ -31,7 +31,7 @@ class openvpn::params {
       case $facts['os']['release']['major'] {
         '7': {
           $additional_packages = ['easy-rsa','openvpn-auth-ldap']
-          $ldap_auth_plugin_location = undef
+          $ldap_auth_plugin_location = '/usr/lib64/openvpn/plugin/lib/openvpn-auth-ldap.so'
           $systemd = true
         }
         '6': {
